@@ -67,7 +67,7 @@
         <input type="tel" id="whatsapp" onkeyup="gerarAssinatura()" placeholder="(XX) XXXX-XXXX">
 
         <label for="email">E-mail Profissional:</label>
-        <input type="email" id="email" onkeyup="gerarAssinatura()" placeholder="seu.email@empresa.com.br">
+        <input type="email" id="email" onkeyup="gerarAssinatura()" placeholder="seu.email@verion.com.br">
 
         <h3>Prévia da Assinatura:</h3>
         <div id="assinatura-preview">
@@ -87,12 +87,12 @@
             const nome = document.getElementById('nome').value || "Nome e Sobrenome";
             const cargo = document.getElementById('cargo').value || "Cargo na Empresa";
             const whatsapp= document.getElementById('whatsapp').value || "(XX) XXXX-XXXX";
-            const email = document.getElementById('email').value || "seu.email@empresa.com.br";
+            const email = document.getElementById('email').value || "seu.email@verion.com.br";
             
             
             // ⚠️ URLs das Logos
-            const urlLogo = "img/Verion.png";
-            const urlogoAgritauro = "img/Agricultura.png";
+            const urlLogo = "img/VerionAlterada.png";
+            const urlogoAgricultura = "img/AgriculturaVerion.png";
             
             // 2. Construir o HTML da assinatura (Usando TABELA e Estilos INLINE)
             
@@ -101,7 +101,7 @@
                     <tr>
                         <td style="padding-right: 15px; vertical-align: center;">
                             <a href="https://www.verion.com.br/" target="_blank" style="text-decoration: none;">
-                                <img src="${urlLogo}" alt="Logo da Verion" width="150" height="30" style="display: block; border: none;">
+                                <img src="${urlLogo}" alt="Logo da Verion" width="150" height="30" width="150" height="30" style="display: block; border: none; padding: auto 0;">
                             </a>
                             <div class="social-links" style="margin-top: 5px; text-align: center;">
                                 <a href="https://www.linkedin.com/company/oleohidraulica-verion/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
@@ -113,10 +113,9 @@
                         </td>
 
                         <td style="padding-right: 15px; vertical-align: center;">
-                            <a href="https://agritauro.com/" target="_blank" style="text-decoration: none;">
-                                <img src="${urlogoAgritauro}" alt="Logo da Agritauro" width="150" height="30" style="display: block; border: none;">
+                            <a href="https://www.agriculturaverion.com.br/" target="_blank" style="text-decoration: none;">
+                                <img src="${urlogoAgricultura}" alt="Logo da Agricultura" width="150" height="30" style="display: block; border: none; padding: auto 0;">
                             </a>
-
                             <div class="social-links" style="margin-top: 5px; text-align: center;">
                                 <a href="https://www.linkedin.com/company/verionbrasilagricultura/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
                                 <a href="https://www.instagram.com/verionagricultura/" style="margin-right: 3px;"><img src="img/Instagram.png" width="20" alt="Instagram"></a>
@@ -139,7 +138,7 @@
                             <div style="height: 5px; line-height: 5px; font-size: 1px;">&nbsp;</div>
                             
                             <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
-                                WhatsApp: <a href ="https://wa.me/${whatsapp}"<span style="color: red;">${whatsapp}</a>
+                                WhatsApp: <a href ="wa.me/${whatsapp}"<span style="color: red;">${whatsapp}</a>
                             </p>
 
                             <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
@@ -151,7 +150,7 @@
                             </p>
                             
                             <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
-                                Endereço: <a href="https://maps.app.goo.gl/TcP9VjYx2XyAZge47" style="color: red; text-decoration: none;"> R. Pedro de Toledo, 175 - b - Taboão, Guarulhos - SP, 07140-000</a>
+                                Endereço: <a href="https://maps.app.goo.gl/TcP9VjYx2XyAZge47" style="color: red; text-decoration: none;">R. Pedro de Toledo, 175 - Taboão, Guarulhos - SP, 07140-000</a>
                             </p>
                         </td>
                     </tr>
