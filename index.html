@@ -57,7 +57,7 @@
     <div class="container">
         <h2>✏️ Gerador de Assinaturas VERION</h2>
         
-        <label for="nome">Nome Completo:</label>
+        <label for="nome">Nome e Sobrenome:</label>
         <input type="text" id="nome" onkeyup="gerarAssinatura()" placeholder="Nome e Sobrenome">
 
         <label for="cargo">Cargo:</label>
@@ -68,6 +68,10 @@
 
         <label for="email">E-mail Profissional:</label>
         <input type="email" id="email" onkeyup="gerarAssinatura()" placeholder="seu.email@verion.com.br">
+
+        <label for="ramal">Ramal: </label>
+        <input type="tel" id="ramal" onkeyup="gerarAssinatura()" placeholder="Ramal">
+
 
         <h3>Prévia da Assinatura:</h3>
         <div id="assinatura-preview">
@@ -88,51 +92,22 @@
             const cargo = document.getElementById('cargo').value || "Cargo na Empresa";
             const whatsapp= document.getElementById('whatsapp').value || "(XX) XXXX-XXXX";
             const email = document.getElementById('email').value || "seu.email@verion.com.br";
+            const ramal = document.getElementById('ramal').value || "XXXX";
             
             
             // ⚠️ URLs das Logos
-            const urlLogo = "img/VerionAlterada.png";
-            const urlogoAgricultura = "img/AgriculturaVerion.png";
+            const urlLogo = "img/LOGO-COLORIDA.png";
+            
             
             // 2. Construir o HTML da assinatura (Usando TABELA e Estilos INLINE)
             
             const htmlAssinatura = `
                 <table cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif; font-size: 10pt; line-height: 1.2;">
-                    <tr>
-                        <p style="text-align: center;">
-                            <img src="img/Aviso.png" alt="Aviso" width="720" height="125">
-                        </p>
-                        
-                        <td style="padding-right: 15px; vertical-align: center;">
-                            <a href="https://www.verion.com.br/" target="_blank" style="text-decoration: none;">
-                                <img src="${urlLogo}" alt="Logo da Verion" width="150" height="30" width="150" height="30" style="display: block; border: none; padding: auto 0;">
-                            </a>
-                            <div class="social-links" style="margin-top: 5px; text-align: center;">
-                                <a href="https://www.linkedin.com/company/oleohidraulica-verion/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
-                                <a href="https://www.instagram.com/verionoleohidraulicaoficial/" style="margin-right: 3px;"><img src="img/Instagram.png" width="20" alt="Instagram"></a>
-                                <a href="https://www.facebook.com/VerionOleohidraulicaBrasil" style="margin-right: 3px;"><img src="img/Facebook.png" width="20" alt="Facebook"></a>
-                                <a href="https://www.youtube.com/@VERIONOHBRASIL" style="margin-right: 3px;"><img src="img/Youtube.png" width="20" alt="Youtube"></a>
-                                <a href="https://www.tiktok.com/@verionbrasil" style="margin-right: 3px;"><img src="img/Tiktok.png" width="20" alt="Tiktok"></a>
-                            </div>
-                        </td>
-
-                        <td style="padding-right: 15px; vertical-align: center;">
-                            <a href="https://www.agriculturaverion.com.br/" target="_blank" style="text-decoration: none;">
-                                <img src="${urlogoAgricultura}" alt="Logo da Agricultura" width="150" height="30" style="display: block; border: none; padding: auto 0;">
-                            </a>
-                            <div class="social-links" style="margin-top: 5px; text-align: center;">
-                                <a href="https://www.linkedin.com/company/verionbrasilagricultura/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
-                                <a href="https://www.instagram.com/verionagricultura/" style="margin-right: 3px;"><img src="img/Instagram.png" width="20" alt="Instagram"></a>
-                                <a href="https://www.facebook.com/VerionAgriculturaBrasil/" style="margin-right: 3px;"><img src="img/Facebook.png" width="20" alt="Facebook"></a>
-                                <a href="https://www.youtube.com/@VERIONAgriculturaOficial" style="margin-right: 3px;"><img src="img/Youtube.png" width="20" alt="Youtube"></a>
-                                <a href="https://www.tiktok.com/@agriculturaverionbrasil" style="margin-right: 3px;"><img src="img/Tiktok.png" width="20" alt="Tiktok"></a>
-                            </div>
-                        </td>
-                        
-                        <td style="border-left: 1px solid red; padding-left: 15px; vertical-align: top;">
+                    <tr> 
+                         <td style="border-right: 1px solid red; padding-right: 15px; vertical-align: top;">
                             
                             <p style="margin: 0; padding: 0;">
-                                <strong style="color: red; font-size: 13pt;">${nome}</strong>
+                                <strong style="color: red; font-size: 15pt;">${nome}</strong>
                             </p>
                             
                             <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
@@ -141,21 +116,63 @@
                             
                             <div style="height: 5px; line-height: 5px; font-size: 1px;">&nbsp;</div>
                             
-                            <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
-                                WhatsApp: <a href ="https://wa.me/${whatsapp}"<span style="color: red;">${whatsapp}</a>
+                            <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
+                                WhatsApp: <a href ="wa.me/${whatsapp}"<span style="color: red;">${whatsapp}</a>
                             </p>
 
-                            <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
+                            <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
                                 E-mail: <a href="mailto:${email}" style="color: red; text-decoration: none;">${email}</a>
                             </p>
 
-                            <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
+                            <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
                                 Telefone (Fixo): <a href="tel:21007400" style="color: red; text-decoration: none;"> 2100-7400</a>
                             </p>
                             
-                            <p style="margin: 0; padding: 0; color: #555; font-size: 9pt;">
-                                Endereço: <a href="https://maps.app.goo.gl/TcP9VjYx2XyAZge47" style="color: red; text-decoration: none;">R. Pedro de Toledo, 175 - Taboão, Guarulhos - SP, 07140-000</a>
+                            <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
+                                RAMAL:<a style="color: red; text-decoration: none;">${ramal}</a>
                             </p>
+
+                        </td>
+                        <p style="text-align: center;">
+                            <img src="img/Aviso.png" alt="Aviso" width="720" height="125">
+                        </p>
+
+                        <p style="margin: 5; padding: 0; color: #555; font-size: 10pt;">
+                             Atenciosamente,
+                        </p>
+                        
+                        <td style="padding-left: 15px;">
+                            <a href="https://www.verion.com.br/" target="_blank" style="text-decoration: none;">
+                                <img src="${urlLogo}" alt="Logo da Verion" width="300" height="35" style="display: block; border: none; padding: auto 0;">
+                            </a>
+
+                            <div>
+                                <p style="margin: 5; padding: 0; color: #555; font-size: 9pt;">
+
+                                    Endereço: <a href="https://maps.app.goo.gl/TcP9VjYx2XyAZge47" style="color: red; text-decoration: none;">R. Pedro de Toledo, 175 - Taboão, Guarulhos - SP, 07140-000</a>
+                                </p>
+                            </div>
+                            <div style="display: inline-block; width: 45%;;">
+
+                                        <p><a href="https://www.verion.com.br/" style="color: red; text-decoration: none;"><u>VERION Oleohidráulica Catálogo Completo</u></a></p>
+
+                                        <a href="https://www.linkedin.com/company/oleohidraulica-verion/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
+                                        <a href="https://www.instagram.com/verionoleohidraulicaoficial/" style="margin-right: 3px;"><img src="img/Instagram.png" width="20" alt="Instagram"></a>
+                                        <a href="https://www.facebook.com/VerionOleohidraulicaBrasil" style="margin-right: 3px;"><img src="img/Facebook.png" width="20" alt="Facebook"></a>
+                                        <a href="https://www.youtube.com/@VERIONOHBRASIL" style="margin-right: 3px;"><img src="img/Youtube.png" width="20" alt="Youtube"></a>
+                                        <a href="https://www.tiktok.com/@verionbrasil" style="margin-right: 3px;"><img src="img/Tiktok.png" width="20" alt="Tiktok"></a>
+                                    
+                            </div>
+                                        
+                            <div style="display: inline-block; width: 45%;">
+                                        <p><a href="https://agriculturaverion.com.br/" style="color: red; text-decoration: none;"><u>VERION Agricultura Catálogo Pulverização</u></a></p>
+
+                                        <a href="https://www.linkedin.com/company/verionbrasilagricultura/" style="margin-right: 3px;"><img src="img/Linkedin.png" width="20" alt="Linkedin"></a>
+                                        <a href="https://www.instagram.com/verionagricultura/" style="margin-right: 3px;"><img src="img/Instagram.png" width="20" alt="Instagram"></a>
+                                        <a href="https://www.facebook.com/VerionAgriculturaBrasil/" style="margin-right: 3px;"><img src="img/Facebook.png" width="20" alt="Facebook"></a>
+                                        <a href="https://www.youtube.com/@VERIONAgriculturaOficial" style="margin-right: 3px;"><img src="img/Youtube.png" width="20" alt="Youtube"></a>
+                                        <a href="https://www.tiktok.com/@agriculturaverionbrasil" style="margin-right: 3px;"><img src="img/Tiktok.png" width="20" alt="Tiktok"></a>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -175,7 +192,7 @@
             window.getSelection().removeAllRanges();
             window.getSelection().addRange(range);
             
-            alert('A assinatura foi SELECIONADA. Agora, pressione Ctrl+C (ou Cmd+C no Mac) para copiar e cole no seu cliente de e-mail.');
+            alert('A assinatura foi SELECIONADA. Agora, pressione Ctrl+C (ou Cmd+C no Mac) para copiar e cole em Assinaturas no e-mail.');
         }
 
         // Chamar a função ao carregar a página para exibir os valores padrão
