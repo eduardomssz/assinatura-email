@@ -45,7 +45,7 @@
             background-color: darkred;
         }
         #assinatura-preview {
-            border: 1px ;
+            border: 1px dashed #ccc;
             padding: 15px;
             margin-top: 15px;
             background-color: #fff;
@@ -63,7 +63,7 @@
         <label for="cargo">Cargo:</label>
         <input type="text" id="cargo" onkeyup="gerarAssinatura()" placeholder="Seu Cargo na Empresa">
 
-        <label for="Whatsapp">Whatsapp <img src="https://cdn-icons-png.flaticon.com/128/1384/1384023.png" width="15" alt="WhatsApp">:</label>
+        <label for="Whatsapp">Whatsapp</label> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384023.png" width="15" alt="WhatsApp">
         <input type="tel" id="whatsapp" onkeyup="gerarAssinatura()" placeholder="(XX) XXXX-XXXX">
 
         <label for="email">E-mail Profissional:</label>
@@ -96,7 +96,7 @@
             
             
             // ⚠️ URLs das Logos
-            const urlLogo = "img/LOGO-COLORIDA.png";
+            const urlLogo = "https://www.verion.com.br/wp-content/uploads/2025/04/logoVNTransp.png";
             
             
             // 2. Construir o HTML da assinatura (Usando TABELA e Estilos INLINE)
@@ -140,7 +140,7 @@
                         
                         <td style="padding-left: 15px;">
                             <a href="https://www.verion.com.br/" target="_blank" style="text-decoration: none;"vertical-align: top">
-                                <img src="${urlLogo}" alt="Logo da Verion" width="250" height="35" style="display: block; border: none; padding-bottom: 15px;">
+                                <img src="${urlLogo}" alt="Logo da Verion" width="242" height="80" style="display: block; border: none; padding-bottom: 15px;">
                             </a>
 
                             <div>
