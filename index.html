@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -64,7 +65,10 @@
         <input type="text" id="cargo" onkeyup="gerarAssinatura()" placeholder="Seu Cargo na Empresa">
 
         <label for="Whatsapp">Whatsapp</label> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384023.png" width="15" alt="WhatsApp">
-        <input type="tel" id="whatsapp" onkeyup="gerarAssinatura()" placeholder="(XX) XXXX-XXXX">
+        <input type="tel" id="whatsapp"
+        oninput="mascaraTelefone(this); gerarAssinatura();"
+        placeholder="(XX) XXXXX-XXXX"
+        maxlength="15">
 
         <label for="email">E-mail Profissional:</label>
         <input type="email" id="email" onkeyup="gerarAssinatura()" placeholder="seu.email@verion.com.br">
@@ -117,7 +121,7 @@
                             <div style="height: 5px; line-height: 5px; font-size: 1px;">&nbsp;</div>
                             
                             <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
-                                WhatsApp: <a href ="wa.me/${whatsapp}"<span style="color: red;">${whatsapp}</a>
+                                WhatsApp: <a href ="https://wa.me/55${whatsapp.replace(/\D/g, '')}"<span style="color: red;">${whatsapp}</a>
                             </p>
 
                             <p style="margin: 1; padding: 0; color: #555; font-size: 9pt;">
@@ -140,7 +144,7 @@
                         
                         <td style="padding-left: 15px;">
                             <a href="https://www.verion.com.br/" target="_blank" style="text-decoration: none;"vertical-align: top">
-                                <img src="${urlLogo}" alt="Logo da Verion" width="242" height="80" style="display: block; border: none; padding-bottom: 15px;">
+                                <img src="${urlLogo}" alt="Logo da Verion" width="242" height="" style="display: block; border: none; padding-bottom: 15px;">
                             </a>
 
                             <div>
@@ -160,7 +164,7 @@
                                                 <u>VERION Oleohidráulica Catálogo Completo</u>
                                             </a>
                                         </p>
-                                            <div style= center;>
+                                            <div style="text-align: center;">
                                                 <a href="https://www.linkedin.com/company/oleohidraulica-verion/"><img src="img/Linkedin.png" width="20"></a>
                                                 <a href="https://www.instagram.com/verionoleohidraulicaoficial/"><img src="img/Instagram.png" width="20"></a>
                                                 <a href="https://www.facebook.com/VerionOleohidraulicaBrasil"><img src="img/Facebook.png" width="20"></a>
@@ -176,11 +180,11 @@
                                                 <u>VERION Agricultura Catálogo Pulverização</u>
                                             </a>
                                         </p>
-
+                                        <div style="text-align: center;">
                                         <a href="https://www.linkedin.com/company/verionbrasilagricultura/"><img src="img/Linkedin.png" width="20"></a>
                                         <a href="https://www.instagram.com/verionagricultura/"><img src="img/Instagram.png" width="20"></a>
                                         <a href="https://www.facebook.com/VerionAgriculturaBrasil/"><img src="img/Facebook.png" width="20"></a>
-                                        <a href="https://www.youtube.com/@VERIONAgriculturaOficial"><img src="img/Youtube.png" width="20"></a>
+                                        <a href="https://www.youtube.com/@VERIONAgriculturaOficial"><img src= "img/Youtube.png/" width="20"></a>
                                         <a href="https://www.tiktok.com/@agriculturaverionbrasil"><img src="img/Tiktok.png" width="20"></a>
                                     </td>
 
@@ -211,6 +215,69 @@
         window.onload = gerarAssinatura;
     </script>
 
+<!-- Code injected by live-server -->
+<script>
+    // Formatação Whatsapp
+
+        function mascaraTelefone(campo) {
+        let valor = campo.value.replace(/\D/g, ""); // remove tudo que não é número
+
+        if (valor.length > 11) {
+            valor = valor.substring(0, 11);
+        }
+
+        if (valor.length <= 10) {
+            // Formato: (XX) XXXX-XXXX
+            valor = valor.replace(
+                /^(\d{2})(\d{4})(\d{0,4})$/,
+                "($1) $2-$3"
+            );
+        } else {
+            // Formato: (XX) XXXXX-XXXX
+            valor = valor.replace(
+                /^(\d{2})(\d{5})(\d{0,4})$/,
+                "($1) $2-$3"
+            );
+        }
+
+        campo.value = valor;
+    }
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
     <footer>By Eduardo Martins</footer>
 </html>
