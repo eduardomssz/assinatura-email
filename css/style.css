@@ -1,0 +1,73 @@
+/* Estilos apenas para a página do formulário, não afetam a assinatura final */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label, input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+#assinatura-preview {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+.texto-padrao {
+    font-family: 'Arial', sans-serif; /* Define a mesma fonte */
+    font-size:10pt;                /* Define o mesmo tamanho */
+    color: black;                 /* Define a mesma cor */
+    /*line-height: 1.5;               /* Padroniza o espaçamento entre linhas */
+    font-weight: bold;
+}
+
+.texto-complemento {
+    font-family: 'Arial', sans-serif; /* Define a mesma fonte */
+    font-size:10pt;                /* Define o mesmo tamanho */
+    color: black;                 /* Define a mesma cor */
+    /*line-height: 1.5;               /* Padroniza o espaçamento entre linhas */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.icones {
+    width: 30px;
+    height: auto;
+}
