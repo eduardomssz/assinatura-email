@@ -43,7 +43,7 @@ button:hover {
 }
 
 #assinatura-preview {
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     padding: 15px;
     margin-top: 15px;
     background-color: #fff;
@@ -51,7 +51,7 @@ button:hover {
 
 .texto-padrao {
     font-family: 'Arial', sans-serif; /* Define a mesma fonte */
-    font-size:10pt;                /* Define o mesmo tamanho */
+    font-size: 10pt;                /* Define o mesmo tamanho */
     color: black;                 /* Define a mesma cor */
     /*line-height: 1.5;               /* Padroniza o espaçamento entre linhas */
     font-weight: bold;
@@ -59,10 +59,10 @@ button:hover {
 
 .texto-complemento {
     font-family: 'Arial', sans-serif; /* Define a mesma fonte */
-    font-size:10pt;                /* Define o mesmo tamanho */
+    font-size: 10pt;                /* Define o mesmo tamanho */
     color: black;                 /* Define a mesma cor */
     /*line-height: 1.5;               /* Padroniza o espaçamento entre linhas */
-    font-weight: bold;
+   /* font-weight: bold; */
     text-decoration: none;
 }
 
