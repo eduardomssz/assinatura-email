@@ -29,7 +29,7 @@ function gerarAssinatura() {
                     <div style="height: 5px; line-height: 5px; font-size: 1px;">&nbsp;</div>
                     <p>
                     
-                        <a class="texto-padrao">E-mail:</a> 
+                        <a class="texto-padrao">E mail:</a> 
                         <a>
                             <a href="mailto:${email}" class="texto-complemento";">${email}</a>
                         </a>
